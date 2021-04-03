@@ -1,0 +1,13 @@
+{
+
+
+	"createShoppingList": "Create a shopping list",
+	"@createShoppingList": {
+    "description": "Top page floating action button text"
+  },
+
+  "addCuisine": "Add food stuff",
+  "@addCuisine": {
+    "description": "Add food stuff"
+  }
+}
