@@ -1,16 +1,16 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:kaidashikun/controllers/repository_providers.dart';
-import 'package:kaidashikun/repositories/auth_repository.dart';
-import 'package:kaidashikun/repositories/user_repository.dart';
 import 'package:kaidashikun/screens/auth_reader/auth_reader.dart';
-import 'package:kaidashikun/screens/home/app.dart';
+import 'package:kaidashikun/screens/home/home.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'repositories/cuisine_repository.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:kaidashikun/utils/my_theme.dart';
+import 'controllers/repository_providers.dart';
+import 'repositories/auth_repository.dart';
+import 'repositories/user_repository.dart';
+import 'repositories/cuisine_repository.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
       title: 'kaidashikun',
       theme: MyTheme.light(),
       darkTheme: MyTheme.dark(),
-      home: AuthReader(child: App()),
+      home: AuthReader(child: Home()),
     );
   }
 }

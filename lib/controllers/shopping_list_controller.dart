@@ -39,13 +39,14 @@ class ShoppingListController extends StateNotifier<ShoppingList> {
         .expand<Shopping>((s) => s)
         .fold<List<Shopping>>(
             [],
-            (prev, shopping) => prev.map((e) => e.food).contains(shopping.food)
-                ? prev
-                    .map((pre) => pre.food == shopping.food
-                        ? pre.copyWith(amount: pre.amount + shopping.amount)
-                        : pre)
-                    .toList()
-                : [...prev, shopping]);
+            (prev, shopping) =>
+                prev.map((e) => e.food?.name).contains(shopping.food?.name)
+                    ? prev
+                        .map((pre) => pre.food?.name == shopping.food?.name
+                            ? pre.copyWith(amount: pre.amount + shopping.amount)
+                            : pre)
+                        .toList()
+                    : [...prev, shopping]);
   }
 }
 
