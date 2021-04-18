@@ -3,7 +3,7 @@ import 'package:kaidashikun/controllers/repository_providers.dart';
 import 'package:kaidashikun/models/user/user.dart';
 import 'package:kaidashikun/repositories/auth_repository.dart';
 import 'package:kaidashikun/repositories/user_repository.dart';
-import 'package:kaidashikun/screens/auth_reader.dart/auth_reader_state.dart';
+import 'package:kaidashikun/screens/auth_reader/auth_reader_state.dart';
 
 class AuthReaderController extends StateNotifier<AuthReaderState> {
   AuthReaderController(this.userRepository, this.authRepository)
@@ -25,6 +25,10 @@ class AuthReaderController extends StateNotifier<AuthReaderState> {
     final user = User(uid: credential.user?.uid);
     await userRepository.createUser(user);
     return;
+  }
+
+  Future signOut() async {
+    await authRepository.signOut();
   }
 }
 

@@ -8,7 +8,7 @@ class AppController extends StateNotifier<TabBarState> {
       : super(
           TabBarState(
             controller: TabController(
-              length: 2,
+              length: 3,
               vsync: MyTicker(),
             ),
             currentIndex: 0,

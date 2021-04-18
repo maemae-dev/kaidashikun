@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kaidashikun/screens/auth_reader.dart/auth_stream_provider.dart';
-import 'package:kaidashikun/screens/auth_reader.dart/auth_reader_controller.dart';
+import 'package:kaidashikun/screens/auth_reader/auth_stream_provider.dart';
+import 'package:kaidashikun/screens/auth_reader/auth_reader_controller.dart';
 
 class AuthReader extends ConsumerWidget {
   AuthReader({required this.child});
@@ -42,8 +42,6 @@ class AuthReader extends ConsumerWidget {
                         ],
                       );
                     });
-              } else {
-                // FirebaseAuth.instance.signOut();
               }
             },
             loading: () => {},

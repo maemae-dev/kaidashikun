@@ -9,6 +9,10 @@ class AuthRepository {
   Future<UserCredential> signInAnonymously() {
     return FirebaseAuth.instance.signInAnonymously();
   }
+
+  Future signOut() {
+    return FirebaseAuth.instance.signOut();
+  }
 }
 
 class MockAuthRepository extends Mock implements AuthRepository {}

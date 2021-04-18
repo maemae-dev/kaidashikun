@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:kaidashikun/controllers/repository_providers.dart';
 import 'package:kaidashikun/repositories/auth_repository.dart';
 import 'package:kaidashikun/repositories/user_repository.dart';
-import 'package:kaidashikun/screens/auth_reader.dart/auth_reader.dart';
+import 'package:kaidashikun/screens/auth_reader/auth_reader.dart';
 import 'package:kaidashikun/screens/home/app.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'repositories/cuisine_repository.dart';
@@ -18,9 +18,9 @@ Future<void> main() async {
 
   runApp(
     ProviderScope(overrides: [
-      authRepositoryProvider.overrideWithValue(MockAuthRepository()),
-      cuisineRepositoryProvider.overrideWithValue(FakeCuisineRepository()),
-      userRepositoryProvider.overrideWithValue(MockUserRepository()),
+      // authRepositoryProvider.overrideWithValue(MockAuthRepository()),
+      // cuisineRepositoryProvider.overrideWithValue(FakeCuisineRepository()),
+      // userRepositoryProvider.overrideWithValue(MockUserRepository()),
     ], child: MyApp()),
   );
 }
@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
         const Locale('en', ''),
         const Locale('ja', ''),
       ],
-      themeMode: ThemeMode.light,
+      // themeMode: ThemeMode.light,
       title: 'kaidashikun',
       theme: MyTheme.light(),
       darkTheme: MyTheme.dark(),
